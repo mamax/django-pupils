@@ -3,13 +3,15 @@
   <head>
   <meta charset="UTF-8"/>
   	<title>База Учнів</title>
-  	  <meta name="description" value="Система Обліку Учнів Навчального Закладу" />
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="description" value="Система Обліку Учнів Навчального Закладу" />
 
   	<!-- Include Styles -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/main.css">
-		<style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8
+		<style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 
+		<!--
+		{border:1px solid red;}
+		-->
 		</style>
   </head>
   <body>
@@ -24,11 +26,11 @@
 
   		<!-- Group selector-->
   			<div class = "col-xs-4" id= "group-selector">
-  				<strong>Група:</strong>
+  				<strong>Клас:</strong>
 				<select>
 					<option value="">Усі Учні</option>
-					<option value="">8-А, Подоба Віталій (No 254)</option>
-					<option value="">5-Б, Корост Андрій (No 2123)</option>
+					<option value="">5-А, Подоба Віталій (No 254)</option>
+					<option value="">8-Б, Корост Андрій (No 2123)</option>
 				</select>
   			</div>
   		</div>
@@ -38,9 +40,9 @@
   		<div class ="row" id = "sub-header">
   			<div class="col-xs-12">
   				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="../pupils/templates/pupils/index.html">Учні</a></li>
-					<li role="presentation"><a href="../pupils/templates/pupils/visiting.html">Відвідування</a></li>
-					<li role="presentation"><a href="../pupils/templates/pupils/groups.html">Групи</a></li>
+					<li role="presentation"><a href="/">Учні</a></li>
+					<li role="presentation"><a href="/journal">Відвідування</a></li>
+					<li role="presentation" class="active"><a href="/groups">Класи</a></li>
 				</ul>
   			</div>
   		</div>
@@ -51,52 +53,47 @@
 
 			<div class="col-xs-12" id="content-column">
 				<!-- Status Message -->
-					<div class="alert alert-warning" role="alert">Учень успішно доданий.</div>
-
+					<div class="alert alert-warning" role="alert">Клас успішно доданий.</div>
 					<div class = "col-xs-8">
-						<h2>База Учнів</h2>
+						<h2>Класи</h2>
 					</div>
 
 					<div class = "col-xs-4">
 						<!-- Add Student Button -->
-						<center>
-					<a class="btn btn-primary" href="#">Додати Учня</a>
+							<center>
+						<a class="btn btn-primary"  href="/groups/add">Додати Клас</a>
 							</center>
 					</div>
-
+					
 					<div>
-					<!-- Start Students Listing -->
+					<!-- Start Students Listing Groups-->
 							<table class="table table-hover table-striped">
 								<thead>
 									<tr>
 										<th><a href="">No</a></th>
-										<th>Фото</th>
-										<th><a href="">Прізвище &uarr;</a></th>
-										<th><a href="#">Ім'я</a></th>
-										<th><a href="#">No Білету</a></th>
+										<th>Назва</th>
+										<th><a href="">Староста &uarr;</a></th>
 										<th>Дії</th>
 									</tr>
 								</thead>
 									<tbody>
 										<tr>
 											<td>1</td>
-											<td><img height="30" width="30" src="./img/me.jpeg" class="img-circle"></td>
-											<td><a title="Редагувати" href="#">Корост</a></td>
-											<td><a title="Редагувати" href="#">Андрій</a></td>
-											<td>2123</td>
+											<td>8-А</td>
+											<td><a title="Редагувати" href="#">Яченюк Олег</a></td>
 											<td><div class="dropdown">
 													<button class="btn btn-default dropdown-toggle"	type="button" data-toggle="dropdown">Дія
 														<span class="caret"></span>
 													</button>
 													<ul class="dropdown-menu" role="menu">
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="#">Відвідування</a>
+															<a role="menuitem" tabindex="-1" href="/journal/groups/1">Відвідування</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="#">Редагувати</a>
+															<a role="menuitem" tabindex="-1" href="/groups/1/edit">Редагувати</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="#">Видалити</a>
+															<a role="menuitem" tabindex="-1" href="/groups/1/delete">Видалити</a>
 														</li>
 													</ul>
 												</div>
@@ -104,23 +101,43 @@
 										</tr>
 										<tr>
 											<td>2</td>
-											<td><img height="30" width="30" src="./img/me.jpeg" class="img-circle"></td>
-											<td><a title="Редагувати" href="#">Корост</a></td>
-											<td><a title="Редагувати" href="#">Андрій</a></td>
-											<td>2123</td>
+											<td>5-А</td>
+											<td><a title="Редагувати" href="#">Подоба Віталій</a></td>
 											<td><div class="dropdown">
 													<button class="btn btn-default dropdown-toggle"	type="button" data-toggle="dropdown">Дія
 														<span class="caret"></span>
 													</button>
 													<ul class="dropdown-menu" role="menu">
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="#">Відвідування</a>
+															<a role="menuitem" tabindex="-1" href="/journal/groups/2">Відвідування</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="#">Редагувати</a>
+															<a role="menuitem" tabindex="-1" href="/groups/2/edit">Редагувати</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="#">Видалити</a>
+															<a role="menuitem" tabindex="-1" href="/groups/2/delete">Видалити</a>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>8-Б</td>
+											<td><a title="Редагувати" href="#">Іванюк Андрій</a></td>
+											<td><div class="dropdown">
+													<button class="btn btn-default dropdown-toggle"	type="button" data-toggle="dropdown">Дія
+														<span class="caret"></span>
+													</button>
+													<ul class="dropdown-menu" role="menu">
+														<li role="presentation">
+															<a role="menuitem" tabindex="-1" href="/journal/groups/3">Відвідування</a>
+														</li>
+														<li role="presentation">
+															<a role="menuitem" tabindex="-1" href="/groups/3/edit">Редагувати</a>
+														</li>
+														<li role="presentation">
+															<a role="menuitem" tabindex="-1" href="/groups/3/delete">Видалити</a>
 														</li>
 													</ul>
 												</div>
@@ -130,13 +147,9 @@
 						</table>
 						<nav>
 							<ul class="pagination">
-								<li><a href="#">&laquo;</a></li>
 								<li class="active"><a href="#">1</a></li>
 								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">&raquo;</a></li>
+								<li><a href="#">Далі</a></li>
 							</ul>
 						</nav>
 				<!-- End Students Listing -->
@@ -147,7 +160,7 @@
 		<!-- Start Footer -->
 		<div class="row" id="footer">
 			<div class="col-xs-12">
-				&copy; 2014 Сервіс Обліку Учнів
+				&copy; 2015 Сервіс Обліку Учнів
 			</div>
 		</div>
 		<!-- End Footer -->
