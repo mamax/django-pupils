@@ -4,8 +4,8 @@
   <html lang="uk">
   <head>
   <meta charset="UTF-8"/>
-  	<title>База Учнів</title>
-  	<meta name="description" value="Система Обліку Учнів Навчального Закладу" />
+  	<title>База Студентів</title>
+  	<meta name="description" value="Система Обліку студентів Навчального Закладу" />
 
   	<!-- Include Styles -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
@@ -23,14 +23,14 @@
   		<div class= "row" id ="header">
   		<!--Logo -->
   			<div class = "col-xs-8">
-  				<h1>Сервіс Обліку Учнів</h1>
+  				<h1>Сервіс обліку студентів</h1>
   			</div>
 
   		<!-- Group selector-->
   			<div class = "col-xs-4" id= "group-selector">
   				<strong>Група:</strong>
 				<select>
-					<option value="">Усі Учні</option>
+					<option value="">Усі студенти</option>
 					<option value="">8-А, Подоба Віталій (No 254)</option>
 					<option value="">5-Б, Корост Андрій (No 2123)</option>
 				</select>
@@ -42,7 +42,7 @@
   		<div class ="row" id = "sub-header">
   			<div class="col-xs-12">
   				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation"><a href="{% url "home" %}">Учні</a></li>
+					<li role="presentation"><a href="{% url "home" %}">Студенти</a></li>
 					<li role="presentation" class="active"><a href="{% url "journal" %}">Відвідування</a></li>
 					<li role="presentation"><a href="{% url "groups" %}">Групи</a></li>
 				</ul>
