@@ -108,3 +108,6 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS +(
     "pupilsdb.context_processors.pupils_proc")
 
 PORTAL_URL = 'http://localhost:8000'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
