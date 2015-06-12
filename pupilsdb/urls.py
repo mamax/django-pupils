@@ -19,29 +19,29 @@ from django.contrib import admin
 urlpatterns = patterns('',
 
     # Students urls
-    url(r'^$', 'pupils.views.pupils_list', name='home'),
+    url(r'^$', 'pupils.templates.views.pupils.pupils_list', name='home'),
 
-    url(r'^pupils/add/$', 'pupils.views.pupils_add', name='pupils_add'),
+    url(r'^pupils/add/$', 'pupils.templates.views.pupils.pupils_add', name='pupils_add'),
 
-    url(r'^pupils/(?P<sid>\d+)/edit/$', 'pupils.views.pupils_edit', name='pupils_edit'),
+    url(r'^pupils/(?P<sid>\d+)/edit/$', 'pupils.templates.views.pupils.pupils_edit', name='pupils_edit'),
 
-    url(r'^pupils/(?P<sid>\d+)/delete/$', 'pupils.views.pupils_delete', name='pupils_delete'),
+    url(r'^pupils/(?P<sid>\d+)/delete/$', 'pupils.templates.views.pupils.pupils_delete', name='pupils_delete'),
 
     # Groups urls
-    url(r'^groups/$', 'pupils.views.groups_list', name='groups'),
+    url(r'^groups/$', 'pupils.templates.views.groups.groups_list', name='groups'),
 
-    url(r'^groups/add/$', 'pupils.views.groups_add', name='groups_add'),
+    url(r'^groups/add/$', 'pupils.templates.views.groups.groups_add', name='groups_add'),
 
-    url(r'^groups/(?P<gid>\d+)/edit/$', 'pupils.views.groups_edit', name='groups_edit'),
+    url(r'^groups/(?P<gid>\d+)/edit/$', 'pupils.templates.views.groups.groups_edit', name='groups_edit'),
 
-    url(r'^groups/(?P<gid>\d+)/delete/$', 'pupils.views.groups_delete', name='groups_delete'),
+    url(r'^groups/(?P<gid>\d+)/delete/$', 'pupils.templates.views.groups.groups_delete', name='groups_delete'),
 
     # Journal urls
-    url(r'^journal/$', 'pupils.views.journal_list', name='journal'),
+    url(r'^journal/$', 'pupils.templates.views.journal.journal_list', name='journal'),
 
-    url(r'^journal/pupil/(?P<gid>\d+)/$', 'pupils.views.journal_pupil', name='journal_pupil'),
+    url(r'^journal/pupil/(?P<gid>\d+)/$', 'pupils.templates.views.journal.journal_pupil', name='journal_pupil'),
 
-    url(r'^journal/groups/(?P<gid>\d+)/$', 'pupils.views.journal_group', name='journal_group'),
+    url(r'^journal/groups/(?P<gid>\d+)/$', 'pupils.templates.views.journal.journal_group', name='journal_group'),
 
     url(r'^admin/', include(admin.site.urls)),
 )
