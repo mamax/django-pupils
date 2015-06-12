@@ -42,9 +42,9 @@
   		<div class ="row" id = "sub-header">
   			<div class="col-xs-12">
   				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation"><a href="/">Учні</a></li>
-					<li role="presentation"><a href="/journal">Відвідування</a></li>
-					<li role="presentation" class="active"><a href="/groups">Класи</a></li>
+					<li role="presentation"><a href="{% url "home" %}">Учні</a></li>
+					<li role="presentation"><a href="{% url "journal" %}">Відвідування</a></li>
+					<li role="presentation" class="active"><a href="{% url "groups" %}">Класи</a></li>
 				</ul>
   			</div>
   		</div>
@@ -63,7 +63,7 @@
 					<div class = "col-xs-4">
 						<!-- Add Student Button -->
 							<center>
-						<a class="btn btn-primary"  href="/groups/add">Додати Клас</a>
+						<a class="btn btn-primary"  href="{% url "groups_add" %}">Додати Клас</a>
 							</center>
 					</div>
 					
@@ -89,13 +89,13 @@
 													</button>
 													<ul class="dropdown-menu" role="menu">
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="/journal/groups/1">Відвідування</a>
+															<a role="menuitem" tabindex="-1" href="{% url "journal_group" 1 %}">Відвідування</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="/groups/1/edit">Редагувати</a>
+															<a role="menuitem" tabindex="-1" href="{% url "groups_edit" 1 %}">Редагувати</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="/groups/1/delete">Видалити</a>
+															<a role="menuitem" tabindex="-1" href="{% url "groups_delete" 1 %}">Видалити</a>
 														</li>
 													</ul>
 												</div>

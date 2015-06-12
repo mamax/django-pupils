@@ -42,9 +42,9 @@
   		<div class ="row" id = "sub-header">
   			<div class="col-xs-12">
   				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation"><a href="/">Учні</a></li>
-					<li role="presentation" class="active"><a href="/journal">Відвідування</a></li>
-					<li role="presentation"><a href="/groups">Групи</a></li>
+					<li role="presentation"><a href="{% url "home" %}">Учні</a></li>
+					<li role="presentation" class="active"><a href="{% url "journal" %}">Відвідування</a></li>
+					<li role="presentation"><a href="{% url "groups" %}">Групи</a></li>
 				</ul>
   			</div>
   		</div>

@@ -39,9 +39,9 @@
   		<div class ="row" id = "sub-header">
   			<div class="col-xs-12">
   				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="/">Учні</a></li>
-					<li role="presentation"><a href="/journal">Відвідування</a></li>
-					<li role="presentation"><a href="/groups">Класи</a></li>
+					<li role="presentation" class="active"><a href="{% url "home" %}">Учні</a></li>
+					<li role="presentation"><a href="{% url "journal" %}">Відвідування</a></li>
+					<li role="presentation"><a href="{% url "groups" %}">Класи</a></li>
 				</ul>
   			</div>
   		</div>
@@ -61,7 +61,7 @@
 					<div class = "col-xs-4">
 						<!-- Add Student Button -->
 						<center>
-					<a class="btn btn-primary" href="/pupils/add">Додати Учня</a>
+					<a class="btn btn-primary" href="{% url "pupils_add" %}">Додати Учня</a>
 							</center>
 					</div>
 
@@ -81,9 +81,9 @@
 									<tbody>
 										<tr>
 											<td>1</td>
-											<td><img height="30" width="30" src="/static/img/piv.png" class="img-circle"></td>
-											<td><a title="Редагувати" href="/pupils/1/edit">Корост</a></td>
-											<td><a title="Редагувати" href="/pupils/1/edit">Андрій</a></td>
+											<td><img height="30" width="30" src="{% static "img/piv.png" %}" class="img-circle"></td>
+											<td><a title="Редагувати" href="{% url "pupils_edit" 1 %}">Корост</a></td>
+											<td><a title="Редагувати" href="{% url "pupils_edit" 1 %}">Андрій</a></td>
 											<td>2123</td>
 											<td><div class="dropdown">
 													<button class="btn btn-default dropdown-toggle"	type="button" data-toggle="dropdown">Дія
@@ -91,13 +91,13 @@
 													</button>
 													<ul class="dropdown-menu" role="menu">
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="/journal/pupil/1">Відвідування</a>
+															<a role="menuitem" tabindex="-1" href="{% url "journal_pupil" 1 %}">Відвідування</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="/pupils/1/edit">Редагувати</a>
+															<a role="menuitem" tabindex="-1" href="{% url "pupils_edit" 1 %}">Редагувати</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="/pupils/1/delete">Видалити</a>
+															<a role="menuitem" tabindex="-1" href="{% url "pupils_delete" 1 %}">Видалити</a>
 														</li>
 													</ul>
 												</div>
