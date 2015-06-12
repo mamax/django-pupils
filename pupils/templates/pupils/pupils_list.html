@@ -79,54 +79,32 @@
 									</tr>
 								</thead>
 									<tbody>
+                                    {% for pupil in pupils %}
 										<tr>
-											<td>1</td>
-											<td><img height="30" width="30" src="{% static "img/piv.png" %}" class="img-circle"></td>
-											<td><a title="Редагувати" href="{% url "pupils_edit" 1 %}">Корост</a></td>
-											<td><a title="Редагувати" href="{% url "pupils_edit" 1 %}">Андрій</a></td>
-											<td>2123</td>
+											<td>{{ forloop.counter }}</td>
+											<td><img height="30" width="30" src="{% static pupil.image %}" class="img-circle"></td>
+											<td><a title="Редагувати" href="{% url "pupils_edit" pupil.id %}">{{ pupil.last_name }}</a></td>
+											<td><a title="Редагувати" href="{% url "pupils_edit" pupil.id %}">{{ pupil.first_name }}</a></td>
+											<td>{{ pupil.ticket }}</td>
 											<td><div class="dropdown">
 													<button class="btn btn-default dropdown-toggle"	type="button" data-toggle="dropdown">Дія
 														<span class="caret"></span>
 													</button>
 													<ul class="dropdown-menu" role="menu">
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="{% url "journal_pupil" 1 %}">Відвідування</a>
+															<a role="menuitem" tabindex="-1" href="{% url "journal_pupil" pupil.id %}">Відвідування</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="{% url "pupils_edit" 1 %}">Редагувати</a>
+															<a role="menuitem" tabindex="-1" href="{% url "pupils_edit" pupil.id %}">Редагувати</a>
 														</li>
 														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="{% url "pupils_delete" 1 %}">Видалити</a>
+															<a role="menuitem" tabindex="-1" href="{% url "pupils_delete" pupil.id %}">Видалити</a>
 														</li>
 													</ul>
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td>2</td>
-											<td><img height="30" width="30" src="/static/img/me.jpeg" class="img-circle"></td>
-											<td><a title="Редагувати" href="/pupils/2/edit">Корост</a></td>
-											<td><a title="Редагувати" href="/pupils/2/edit">Андрій</a></td>
-											<td>2123</td>
-											<td><div class="dropdown">
-													<button class="btn btn-default dropdown-toggle"	type="button" data-toggle="dropdown">Дія
-														<span class="caret"></span>
-													</button>
-													<ul class="dropdown-menu" role="menu">
-														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="/journal/pupil/2">Відвідування</a>
-														</li>
-														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="/pupils/2/edit">Редагувати</a>
-														</li>
-														<li role="presentation">
-															<a role="menuitem" tabindex="-1" href="/pupils/2/delete">Видалити</a>
-														</li>
-													</ul>
-												</div>
-											</td>
-										</tr>
+										{% endfor %}
 									</tbody>
 						</table>
 						<nav>
